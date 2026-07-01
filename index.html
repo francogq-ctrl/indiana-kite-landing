@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="pop-coral">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende kite en Cumbuco, uno de los 5 mejores spots del mundo. Paquetes todo incluido — alojamiento, instructor certificado, desayunos. Desde R$1.400.">
+  <title>Indiana Kite — Kite Trips en Cumbuco, Brasil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="media-slots.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root { --max-w: 1180px; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--warm-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.5rem;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--nav-border);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--nav-logo);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+    .nav-logo span { color: var(--nav-logo-accent); }
+
+    .nav-cta {
+      background: var(--terra);
+      color: #fff;
+      text-decoration: none;
+      padding: .6rem 1.25rem;
+      border-radius: 50px;
+      font-size: .875rem;
+      font-weight: 500;
+      transition: background .2s, transform .2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--coral); transform: translateY(-1px); }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 6rem 1.5rem 5rem;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: var(--slot-02);
+      background-size: cover; background-position: center 30%;
+    }
+
+    .hero-bg video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* To use a video background, add inside .hero-bg:
+       <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+         <source src="assets/hero-reel.mp4" type="video/mp4">
+       </video>
+    */
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: var(--hero-overlay);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 1100px; color: var(--hero-text); width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 270px;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero-left { display: flex; flex-direction: column; }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--hero-badge-bg);
+      border: 1px solid var(--hero-badge-border);
+      color: var(--hero-badge-text);
+      padding: .375rem 1.1rem;
+      border-radius: 50px;
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8.5vw, 6.8rem);
+      line-height: 0.9; font-weight: 800;
+      margin-bottom: 1.25rem;
+      color: var(--hero-text);
+      text-transform: uppercase;
+      letter-spacing: -.025em;
+    }
+    .hero-title em { color: var(--coral); font-style: normal; }
+
+    .hero-subtitle {
+      font-size: clamp(.9rem, 1.8vw, 1.05rem);
+      color: var(--hero-text-muted);
+      max-width: 500px; margin: 0 0 2.5rem;
+      font-weight: 300; line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex; gap: 1rem;
+      justify-content: flex-start; flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--terra); color: #fff;
+      text-decoration: none;
+      padding: 1rem 2.1rem; border-radius: 50px;
+      font-size: 1rem; font-weight: 600;
+      display: inline-flex; align-items: center; gap: .5rem;
+      transition: all .2s;
+    }
+    .btn-primary:hover {
+      background: var(--coral); transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(196,98,58,.4);
+    }
+
+    .btn-secondary {
+      background: transparent; color: var(--btn-secondary-color);
+      text-decoration: none;
+      padding: 1rem 2.1rem; border-radius: 50px;
+      border: 1px solid var(--btn-secondary-border);
+      font-size: 1rem; font-weight: 500;
+      transition: all .2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(0,0,0,.04);
+      border-color: var(--text);
+    }
+
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      color: var(--hero-scroll);
+      font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px; height: 44px;
+      background: rgba(247,237,216,.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: .3; } 50% { opacity: .8; }
+    }
+
+    /* ── TRUST BAR ─────────────────────────────────── */
+    .trust-bar {
+      background: var(--trust-bg);
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 1.5rem;
+      display: flex; justify-content: center;
+      align-items: center; gap: 3rem; flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex; align-items: center; gap: .875rem;
+      color: var(--trust-text); font-size: .875rem;
+    }
+
+    .trust-icon {
+      width: 36px; height: 36px;
+      background: var(--trust-icon-bg);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+
+    .trust-label { font-weight: 600; display: block; font-size: .95rem; }
+    .trust-sub   { color: var(--trust-sub); font-size: .78rem; display: block; }
+
+    /* ── SHARED LAYOUT ─────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; }
+
+    section { padding: 5.5rem 1.5rem; }
+
+    .section-label {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: .75rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 20px; height: 1.5px;
+      background: var(--terra);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800; line-height: 1.02;
+      color: var(--text); margin-bottom: 1rem;
+      letter-spacing: -.02em;
+    }
+
+    .section-body {
+      font-size: 1.05rem; color: var(--text-light);
+      max-width: 620px; line-height: 1.85;
+    }
+
+    /* ── WHY SECTION ──────────────────────────────── */
+    .why-section { background: var(--sand); }
+
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center; margin-top: 3.5rem;
+    }
+
+    .why-image {
+      aspect-ratio: 4/5; border-radius: 20px;
+      overflow: hidden; position: relative;
+    }
+
+    .why-image-fill {
+      width: 100%; height: 100%;
+      background-image: var(--slot-03);
+      background-size: cover; background-position: center;
+    }
+
+    .why-caption {
+      position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem;
+      background: var(--why-caption-bg);
+      backdrop-filter: blur(8px);
+      border-radius: 12px; padding: 1rem 1.25rem; color: var(--text);
+    }
+    .why-caption strong { display: block; font-size: 1.1rem; color: var(--why-caption-strong); }
+    .why-caption span   { font-size: .82rem; color: var(--why-caption-sub); }
+
+    .why-features { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+
+    .why-feature { display: flex; gap: 1.25rem; align-items: flex-start; }
+
+    .why-icon {
+      width: 50px; height: 50px;
+      background: rgba(196,98,58,.1);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+
+    .why-feature h3 {
+      font-family: var(--serif); font-size: 1.15rem; font-weight: 600;
+      color: var(--text); margin-bottom: .35rem;
+    }
+    .why-feature p { font-size: .95rem; color: var(--text-light); line-height: 1.75; }
+
+    /* ── PACKAGES ─────────────────────────────────── */
+    .packages-section { background: var(--warm-white); }
+
+    .packages-header { text-align: center; margin-bottom: 4rem; }
+    .packages-header .section-body { margin: 0 auto; }
+
+    .packages-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 1.5rem; align-items: start;
+    }
+
+    .pkg {
+      border-radius: 22px; overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      transition: transform .3s, box-shadow .3s;
+      position: relative;
+    }
+    .pkg:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(44,36,23,.12); }
+
+    .pkg.featured {
+      border-color: var(--terra);
+      transform: scale(1.03);
+      box-shadow: 0 24px 60px rgba(196,98,58,.18);
+    }
+    .pkg.featured:hover { transform: scale(1.03) translateY(-6px); }
+
+    .pkg-badge {
+      position: absolute; top: 1.1rem; right: 1.1rem;
+      background: var(--terra); color: #fff;
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .28rem .75rem; border-radius: 50px;
+    }
+
+    .pkg-image {
+      height: 210px; overflow: hidden; position: relative;
+    }
+    .pkg-image-fill {
+      width: 100%; height: 100%;
+      background-size: cover; background-position: center;
+      transition: transform .5s;
+    }
+    .pkg:hover .pkg-image-fill { transform: scale(1.06); }
+
+    .pkg-image-fill.intro   { background-image: var(--slot-04); }
+    .pkg-image-fill.week    { background-image: var(--slot-05); }
+    .pkg-image-fill.retiro  { background-image: var(--slot-06); }
+
+    .pkg-body { padding: 1.75rem; }
+
+    .pkg-duration {
+      font-size: .72rem; font-weight: 700;
+      color: var(--terra); letter-spacing: .1em;
+      text-transform: uppercase; margin-bottom: .5rem;
+    }
+
+    .pkg-name {
+      font-family: var(--serif); font-size: 1.45rem; font-weight: 700;
+      color: var(--text); margin-bottom: .5rem;
+    }
+
+    .pkg-for {
+      font-size: .875rem; color: var(--text-light);
+      margin-bottom: 1.5rem; line-height: 1.65;
+    }
+
+    .pkg-includes {
+      list-style: none; display: flex; flex-direction: column;
+      gap: .6rem; margin-bottom: 1.75rem;
+    }
+    .pkg-includes li {
+      display: flex; align-items: flex-start; gap: .6rem;
+      font-size: .875rem; color: var(--text-light);
+    }
+    .pkg-includes li::before {
+      content: '✓'; color: var(--palm); font-weight: 700;
+      flex-shrink: 0; margin-top: .05em;
+    }
+
+    .pkg-price-block {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .pkg-price-original {
+      font-size: .78rem; color: var(--text-light);
+      text-decoration: line-through; margin-bottom: .2rem;
+    }
+    .pkg-save {
+      display: inline-block;
+      background: rgba(77,124,94,.12); color: var(--palm);
+      font-size: .72rem; font-weight: 700;
+      padding: .2rem .6rem; border-radius: 50px;
+      margin-bottom: .5rem;
+    }
+    .pkg-from { font-size: .78rem; color: var(--text-light); margin-bottom: .25rem; }
+    .pkg-price {
+      font-family: var(--display); font-size: 2.6rem; font-weight: 800;
+      color: var(--terra); line-height: 1;
+    }
+    .pkg-season {
+      font-size: .75rem; color: var(--text-light);
+      margin-top: .25rem; margin-bottom: 1.25rem;
+    }
+
+    .pkg-cta {
+      display: block; text-align: center;
+      padding: .9rem 1.5rem; border-radius: 12px;
+      font-weight: 600; font-size: .95rem;
+      text-decoration: none; transition: all .2s;
+    }
+    .pkg-cta.solid  { background: var(--terra); color: #fff; }
+    .pkg-cta.solid:hover { background: var(--coral); transform: translateY(-1px); }
+    .pkg-cta.outline { border: 1.5px solid var(--border); color: var(--text); }
+    .pkg-cta.outline:hover { border-color: var(--terra); color: var(--terra); }
+
+    .packages-note {
+      text-align: center; margin-top: 2.5rem;
+      font-size: .875rem; color: var(--text-light);
+    }
+    .packages-note a { color: var(--terra); text-decoration: none; }
+    .packages-note a:hover { text-decoration: underline; }
+
+    /* ── GALLERY ──────────────────────────────────── */
+    .gallery-section { background: var(--surface-alt); padding: 5.5rem 1.5rem; }
+    .gallery-section .section-label { color: var(--surface-alt-label); }
+    .gallery-section .section-title { color: var(--surface-alt-title); }
+    .gallery-header { text-align: center; margin-bottom: 3rem; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: 260px 260px;
+      gap: 8px; max-width: var(--max-w); margin: 0 auto;
+    }
+
+    .g-item { border-radius: 10px; overflow: hidden; position: relative; }
+    .g-item.tall  { grid-row: span 2; }
+    .g-item.wide  { grid-column: span 2; }
+
+    .g-fill {
+      width: 100%; height: 100%;
+      background-size: cover; background-position: center;
+      transition: transform .5s;
+    }
+    .g-item:hover .g-fill { transform: scale(1.05); }
+
+    .g-fill.g1 { background-image: var(--slot-07); background-position: center 30%; }
+    .g-fill.g2 { background-image: var(--slot-08); }
+    .g-fill.g3 { background-image: var(--slot-09); }
+    .g-fill.g4 { background-image: var(--slot-10); background-position: center 20%; }
+    .g-fill.g5 { background-image: var(--slot-11); }
+    .g-fill.g6 { background-image: var(--slot-12); background-position: center 25%; }
+    .g-fill.g7 { background-image: var(--slot-13); }
+
+    .g-label {
+      position: absolute; bottom: .75rem; left: .75rem;
+      background: var(--g-label-bg);
+      color: var(--g-label-text);
+      font-size: .68rem; padding: .25rem .5rem;
+      border-radius: 4px; font-style: italic;
+      pointer-events: none;
+    }
+
+    /* ── TESTIMONIALS ─────────────────────────────── */
+    .testimonials-section { background: var(--sand); }
+    .testimonials-header  { text-align: center; margin-bottom: 3.5rem; }
+
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+    }
+
+    .tcard {
+      background: #fff; border-radius: 18px; padding: 2rem;
+      border: 1px solid var(--border);
+    }
+
+    .tcard-stars { color: var(--terra); font-size: 1rem; letter-spacing: .1em; margin-bottom: 1rem; }
+    .tcard-text  { font-size: .975rem; color: var(--text); line-height: 1.85; font-style: italic; margin-bottom: 1.5rem; }
+
+    .tcard-author { display: flex; align-items: center; gap: .875rem; }
+
+    .tcard-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--terra); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+
+    .tcard-name    { font-weight: 600; font-size: .9rem; color: var(--text); }
+    .tcard-origin  { font-size: .78rem; color: var(--text-light); }
+
+    /* ── EXPERIENCED KITERS ───────────────────────── */
+    .exp-section { background: var(--surface-alt); }
+
+    .exp-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+
+    .exp-section .section-label { color: var(--surface-alt-label); }
+    .exp-section .section-title { color: var(--surface-alt-title); }
+    .exp-section .section-body  { color: var(--surface-alt-body); }
+
+    .exp-passes {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: .5rem;
+    }
+
+    .pass-card {
+      background: var(--pass-bg);
+      border: 1px solid var(--pass-border);
+      border-radius: 16px; padding: 1.5rem;
+    }
+
+    .pass-type  { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); font-weight: 700; margin-bottom: .4rem; }
+    .pass-name  { font-family: var(--serif); font-size: 1.15rem; color: var(--pass-name); margin-bottom: .75rem; }
+    .pass-price { font-size: 1.65rem; font-weight: 800; color: var(--terra); font-family: var(--display); line-height: 1; }
+    .pass-dur   { font-size: .78rem; color: var(--pass-dur); margin-top: .2rem; }
+
+    /* ── FAQ ──────────────────────────────────────── */
+    .faq-section { background: var(--warm-white); }
+
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 5rem; align-items: start;
+    }
+
+    .faq-sidebar { position: sticky; top: 5.5rem; }
+
+    .faq-list { display: flex; flex-direction: column; }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; padding: 1.25rem 0;
+      font-size: 1rem; font-weight: 500; color: var(--text);
+      text-align: left; font-family: var(--sans);
+      transition: color .2s;
+    }
+    .faq-q:hover { color: var(--terra); }
+
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.1rem; line-height: 1;
+      color: var(--terra); transition: all .3s;
+    }
+    .faq-item.open .faq-icon {
+      background: var(--terra); color: #fff;
+      border-color: var(--terra); transform: rotate(45deg);
+    }
+
+    .faq-a {
+      overflow: hidden; max-height: 0;
+      transition: max-height .4s ease, padding .3s;
+    }
+    .faq-item.open .faq-a { max-height: 260px; }
+    .faq-a-inner {
+      padding-bottom: 1.25rem;
+      font-size: .95rem; color: var(--text-light); line-height: 1.85;
+    }
+
+    /* ── FINAL CTA ────────────────────────────────── */
+    .cta-section {
+      background: var(--terra); text-align: center;
+      padding: 7rem 1.5rem; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: -50%; left: -20%;
+      width: 140%; height: 200%;
+      background: radial-gradient(circle at 60% 40%, var(--cta-glow) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-section .section-label { color: rgba(247,237,216,.65); }
+    .cta-section .section-title { color: #fff; max-width: 700px; margin: 0 auto .75rem; }
+    .cta-section .section-body  { color: rgba(247,237,216,.8); margin: 0 auto 2.5rem; }
+
+    .cta-urgency {
+      display: inline-block;
+      background: rgba(0,0,0,.2); color: rgba(247,237,216,.9);
+      border-radius: 50px; padding: .5rem 1.25rem;
+      font-size: .85rem; font-weight: 500; margin-bottom: 1.75rem;
+    }
+
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: .75rem;
+      background: #fff; color: var(--terra);
+      text-decoration: none;
+      padding: 1.1rem 2.25rem; border-radius: 50px;
+      font-size: 1.05rem; font-weight: 700;
+      box-shadow: 0 8px 32px rgba(0,0,0,.2);
+      transition: all .2s; position: relative; z-index: 1;
+    }
+    .btn-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.25);
+    }
+    .btn-wa svg { width: 22px; height: 22px; }
+
+    /* ── FOOTER ───────────────────────────────────── */
+    footer {
+      background: var(--footer-bg); text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--footer-text); font-size: .85rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--footer-link); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer p + p { margin-top: .5rem; }
+
+    /* ── FLOAT WA BUTTON ──────────────────────────── */
+    .float-wa {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 90;
+      background: #25D366; color: #fff;
+      width: 60px; height: 60px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37,211,102,.4);
+      transition: all .3s;
+    }
+    .float-wa:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37,211,102,.5); }
+    .float-wa svg { width: 32px; height: 32px; }
+
+    /* ── TICKER ──────────────────────────────────── */
+    .ticker {
+      background: var(--terra);
+      padding: .65rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-track {
+      display: inline-flex;
+      animation: scrollTicker 28s linear infinite;
+    }
+    .ticker-track span {
+      font-family: var(--display);
+      font-size: .78rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ticker-text);
+      padding-right: 0;
+    }
+    @keyframes scrollTicker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-33.333%); }
+    }
+
+    /* ── HERO STAT CARD ──────────────────────────── */
+    .hero-stat-card {
+      background: var(--hero-stat-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--hero-stat-border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      color: var(--hero-stat-text);
+    }
+    .hero-stat-card .stat-label {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--coral); margin-bottom: .75rem;
+    }
+    .hero-stat-card .stat-main {
+      font-family: var(--display);
+      font-size: 3rem; font-weight: 800;
+      color: var(--hero-stat-text); line-height: 1; margin-bottom: .15rem;
+    }
+    .hero-stat-card .stat-sub {
+      font-size: .82rem; color: var(--hero-stat-muted);
+      margin-bottom: 0;
+    }
+    .hero-stat-card .stat-divider {
+      border: none; border-top: 1px solid var(--border);
+      margin: 1.25rem 0;
+    }
+    .hero-stat-card .stat-row {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .82rem; color: var(--hero-stat-muted);
+      margin-bottom: .55rem;
+    }
+    .hero-stat-card .stat-row:last-child { margin-bottom: 0; }
+    .hero-stat-card .stat-highlight { color: var(--hero-stat-text); font-weight: 600; }
+
+    /* ── WHY BADGE ───────────────────────────────── */
+    .why-badge {
+      position: absolute; top: 1.25rem; left: 1.25rem; z-index: 2;
+      background: var(--terra);
+      color: #fff;
+      font-size: .7rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: .4rem 1rem; border-radius: 50px;
+    }
+
+    /* ── FEATURED PKG TALLER IMAGE ───────────────── */
+    .pkg.featured .pkg-image { height: 240px; }
+
+    /* ── SCROLL ANIMATIONS ────────────────────────── */
+    .fade {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+      }
+      .hero-stat-card { display: none; }
+
+      .packages-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px; margin: 0 auto;
+      }
+      .pkg.featured { transform: none; }
+      .pkg.featured:hover { transform: translateY(-6px); }
+      .pkg.featured .pkg-image { height: 210px; }
+
+      .why-grid,
+      .exp-inner,
+      .faq-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      .why-image { aspect-ratio: 16/9; }
+      .faq-sidebar { position: static; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .exp-passes { grid-template-columns: 1fr 1fr; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .g-item.tall, .g-item.wide {
+        grid-row: auto; grid-column: auto;
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.25rem; }
+      .hero-content { max-width: 100%; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary {
+        width: 100%; text-align: center; justify-content: center;
+      }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .exp-passes { grid-template-columns: 1fr; }
+      .trust-bar { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+<!-- ─────────────── NAV ─────────────── -->
+<nav>
+  <a class="nav-logo" href="#">Indiana <span>Kite</span></a>
+  <a class="nav-cta" href="https://wa.me/5585992792065?text=Hola%2C%20quiero%20info%20sobre%20los%20kite%20trips%20de%20Indiana" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+</nav>
+
+<!-- ─────────────── HERO ─────────────── -->
+<section class="hero">
+  <!-- SLOT 01 · Hero video · SLOT 02 · poster/fallback -->
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline poster="assets/02.jpeg">
+      <source src="assets/01.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">🌊 Cumbuco, Brasil — Top 5 Spot Mundial</div>
+      <h1 class="hero-title">
+        La experiencia<br>que estabas<br><em>buscando.</em>
+      </h1>
+      <p class="hero-subtitle">
+        Paquetes todo incluido — alojamiento, instructor certificado, desayunos y más. Desde R$2.600.
+      </p>
+      <div class="hero-actions">
+        <a href="#paquetes" class="btn-primary">Ver paquetes</a>
+        <a href="https://wa.me/5585992792065?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20kite%20trips%20de%20Indiana." target="_blank" rel="noopener" class="btn-secondary">Hablar con el equipo</a>
+      </div>
+    </div>
+    <div class="hero-stat-card">
+      <div class="stat-label">Indiana Kite</div>
+      <div class="stat-main">#1</div>
+      <div class="stat-sub">Kite School en Cumbuco, Brasil</div>
+      <hr class="stat-divider">
+      <div class="stat-row">⭐ <span class="stat-highlight">+500</span>&nbsp;alumnos formados</div>
+      <div class="stat-row">🌬️ <span class="stat-highlight">300+</span>&nbsp;días de viento / año</div>
+      <div class="stat-row">🌊 <span class="stat-highlight">Top 5 spot mundial</span></div>
+      <div class="stat-row">🏠 <span class="stat-highlight">A solo 20m</span>&nbsp;del agua</div>
+    </div>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<!-- ─────────────── TICKER ─────────────── -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>KITE TRIPS &nbsp;·&nbsp; CUMBUCO &nbsp;·&nbsp; BRASIL &nbsp;·&nbsp; TEMPORADA 2026 &nbsp;·&nbsp; KITE SCHOOL &nbsp;·&nbsp; WING FOIL &nbsp;·&nbsp; APRENDE KITE &nbsp;·&nbsp; </span>
+    <span>KITE TRIPS &nbsp;·&nbsp; CUMBUCO &nbsp;·&nbsp; BRASIL &nbsp;·&nbsp; TEMPORADA 2026 &nbsp;·&nbsp; KITE SCHOOL &nbsp;·&nbsp; WING FOIL &nbsp;·&nbsp; APRENDE KITE &nbsp;·&nbsp; </span>
+    <span>KITE TRIPS &nbsp;·&nbsp; CUMBUCO &nbsp;·&nbsp; BRASIL &nbsp;·&nbsp; TEMPORADA 2026 &nbsp;·&nbsp; KITE SCHOOL &nbsp;·&nbsp; WING FOIL &nbsp;·&nbsp; APRENDE KITE &nbsp;·&nbsp; </span>
+  </div>
+</div>
+
+<!-- ─────────────── TRUST BAR ─────────────── -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">🌬️</div>
+    <div>
+      <span class="trust-label">Viento garantizado</span>
+      <span class="trust-sub">300+ días de viento al año</span>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🏄</div>
+    <div>
+      <span class="trust-label">Instructores certificados</span>
+      <span class="trust-sub">Equipo propio incluido</span>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🏝️</div>
+    <div>
+      <span class="trust-label">Spot top 5 del mundo</span>
+      <span class="trust-sub">Cumbuco en el ranking global</span>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">⭐</div>
+    <div>
+      <span class="trust-label">+500 alumnos</span>
+      <span class="trust-sub">De todo el mundo</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────── WHY INDIANA ─────────────── -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-image fade">
+        <div class="why-badge">🌊 Top 5 spot mundial</div>
+        <!-- SLOT 03 · Por qué Indiana -->
+        <div class="why-image-fill" data-slot="03" role="img" aria-label="Imagen slot 03 — Por qué Indiana"></div>
+        <div class="why-caption">
+          <strong>Cumbuco, Ceará</strong>
+          <span>Viento laminar · agua plana y olas · 30°C todo el año</span>
+        </div>
+      </div>
+      <div class="fade">
+        <div class="section-label">Por qué Indiana</div>
+        <h2 class="section-title">No es solo una escuela.<br>Es una experiencia inolvidable.</h2>
+        <p class="section-body">
+          Indiana Kite es el lugar donde el spot, la comunidad y el aprendizaje se fusionan. Vivís el kite desde adentro, no como turista, sino como parte de nuestra tribu.
+        </p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-icon">🌊</div>
+            <div>
+              <h3>El spot perfecto para aprender</h3>
+              <p>Agua plana, viento constante y laminar, sin corrientes peligrosas. Las condiciones de Cumbuco son ideales para progresar rápido, sin importar el nivel.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">🏠</div>
+            <div>
+              <h3>Hostel a 20m del agua</h3>
+              <p>Te despertás, desayunás y estás en el spot en 1 minuto. Sin traslados, sin logística. El foco está en navegar y progresar.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-icon">🤙</div>
+            <div>
+              <h3>Comunidad real</h3>
+              <p>Compartís el viaje con kiters de todo el mundo. Cenas comunitarias, sesiones grupales, noches con vibe de kite camp. Es un viaje, no solo un curso.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── PACKAGES ─────────────── -->
+<section class="packages-section" id="paquetes">
+  <div class="container">
+    <div class="packages-header fade">
+      <div class="section-label">Elegí tu viaje</div>
+      <h2 class="section-title">Tres paquetes. Todo incluido.</h2>
+      <p class="section-body">
+        Precio fijo, sin sorpresas. Cada paquete incluye alojamiento, clases con instructor certificado y desayunos. Solo traés las ganas de pasarla bien.
+      </p>
+    </div>
+
+    <div class="packages-grid">
+
+      <!-- SLOT 04 · Intro Kite -->
+      <div class="pkg fade">
+        <div class="pkg-image">
+          <div class="pkg-image-fill intro" data-slot="04"></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-duration">3 noches · 4 horas de clases</div>
+          <h3 class="pkg-name">Intro Kite</h3>
+          <p class="pkg-for">Para quienes nunca hicieron kite. Un finde largo para probar, aprender y enamorarse del kite.</p>
+          <ul class="pkg-includes">
+            <li>3 noches de alojamiento en Indiana</li>
+            <li>4 horas con instructor certificado</li>
+            <li>Equipo de kite incluido</li>
+            <li>Desayunos incluido</li>
+            <li>Viviendo la comunidad Indiana</li>
+          </ul>
+          <div class="pkg-price-block">
+            <div class="pkg-price-original">R$1.945 si lo contrataras suelto</div>
+            <span class="pkg-save">Ahorrás R$195</span>
+            <div class="pkg-from">Desde</div>
+            <div class="pkg-price">R$1.400</div>
+            <div class="pkg-season">· R$1.750 en temporada alta (jul–dic)</div>
+            <a href="https://wa.me/5585992792065?text=Hola%2C%20me%20interesa%20el%20paquete%20Intro%20Kite%20(3%20noches).%20¿Cuándo%20hay%20disponibilidad?" class="pkg-cta outline" target="_blank" rel="noopener">Consultar disponibilidad</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLOT 05 · Kite Week -->
+      <div class="pkg featured fade">
+        <div class="pkg-badge">Más popular</div>
+        <div class="pkg-image">
+          <div class="pkg-image-fill week" data-slot="05"></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-duration">6 noches · 10 horas de clases</div>
+          <h3 class="pkg-name">Kite Camp Cumbuco</h3>
+          <p class="pkg-for">La semana completa de kite. Para aprender de cero en el mejor spot del mundo. El paquete más elegido.</p>
+          <ul class="pkg-includes">
+            <li>6 noches de alojamiento en Indiana</li>
+            <li>Pack de 10h con instructor certificado</li>
+            <li>2 días de rental libre (sin instructor)</li>
+            <li>Desayunos incluidos</li>
+            <li>1 tarde de excursión en Cuipe</li>
+            <li>Y muchas mas actividades</li>
+          </ul>
+          <div class="pkg-price-block">
+            <div class="pkg-price-original">R$8.000 si lo contrataras suelto</div>
+            <span class="pkg-save">Ahorrás R$2.500</span>
+            <div class="pkg-from">Desde</div>
+            <div class="pkg-price">R$5.500</div>
+            <div class="pkg-season">· Todas lase semanas. De sabado a Sabado</div>
+            <a href="https://wa.me/5585992792065?text=Hola%2C%20me%20interesa%20el%20paquete%20Kite%20Week%20(7%20noches).%20¿Cuándo%20hay%20disponibilidad?" class="pkg-cta solid" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLOT 06 · Kite Retiro -->
+      <div class="pkg fade">
+        <div class="pkg-image">
+          <div class="pkg-image-fill retiro" data-slot="06"></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-duration">Downwind · Cumbuco - Jeri</div>
+          <h3 class="pkg-name">Downwind</h3>
+          <p class="pkg-for">Cumbuco a Jericoacoara en kite. 5 días, 5 spots. Una experiencia inolvidable recirrendo la costa del nordeste</p>
+          <ul class="pkg-includes">
+            <li>Briefing + downwind diario con guía y capitán</li>
+            <li>Filmmaker profesional todo el trip (tu video del downwind)</li>
+            <li>Apoyo terrestre y transporte entre spots</li>
+            <li>Desayunos + petiscos/almuerzo cada día</li>
+            <li>Asado de bienvenida + drink de cierre en Jeri</li>
+            <li>Coaching durante todo el viaje</li>
+          </ul>
+          <div class="pkg-price-block">
+            <div class="pkg-price-original">R$5.000 si lo contrataras por tu cuenta</div>
+            <span class="pkg-save">Ahorrás R$2.400</span>
+            <div class="pkg-from">Desde</div>
+            <div class="pkg-price">R$2.600</div>
+            <div class="pkg-season">· Salidas todos los meses</div>
+            <a href="https://wa.me/5585992792065?text=Hola%2C%20me%20interesa%20el%20paquete%20Kite%20Retiro%20(10%20noches).%20¿Cuándo%20hay%20disponibilidad?" class="pkg-cta outline" target="_blank" rel="noopener">Consultar disponibilidad</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="packages-note fade">
+      Precios para habitación privada con aire, 1 persona. ¿Viajás en pareja o en grupo?
+      <a href="https://wa.me/5585992792065?text=Hola%2C%20somos%20un%20grupo%20y%20queremos%20info%20sobre%20los%20kite%20trips." target="_blank" rel="noopener">Consultanos</a> — tenemos precios especiales.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────── GALLERY ─────────────── -->
+<section class="gallery-section">
+  <div class="gallery-header container fade">
+    <div class="section-label">El lugar</div>
+    <h2 class="section-title">Así se ve un día en Indiana</h2>
+  </div>
+  <div class="gallery-grid fade">
+    <div class="g-item tall">
+      <div class="g-fill g1" data-slot="07"></div>
+      <div class="g-label">Spot Cumbuco</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g2" data-slot="08"></div>
+      <div class="g-label">Golden hour</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g3" data-slot="09"></div>
+      <div class="g-label">Indiana Kite House</div>
+    </div>
+    <div class="g-item wide">
+      <div class="g-fill g4" data-slot="10"></div>
+      <div class="g-label">Comunidad kite</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g5" data-slot="11"></div>
+      <div class="g-label">Clase con instructor</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g6" data-slot="12"></div>
+      <div class="g-label">Comunidad Indiana</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g7" data-slot="13"></div>
+      <div class="g-label">Wing foil intro</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── TESTIMONIALS ─────────────── -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="testimonials-header fade">
+      <div class="section-label">Lo que dicen</div>
+      <h2 class="section-title">Reales. De alumnos reales.</h2>
+    </div>
+    <!-- REPLACE: usar testimonios reales del equipo / Instagram / reseñas de Google -->
+    <div class="testimonials-grid">
+      <div class="tcard fade">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"Llegué sin saber nada de kite y me fui planeando el próximo viaje. El instructor fue increíble, el hostel una sorpresa muy buena y el viento… impresionante. Indiana es el lugar."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">M</div>
+          <div>
+            <div class="tcard-name">Marcos T.</div>
+            <div class="tcard-origin">São Paulo, Brasil · Kite Week</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard fade">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"El paquete vale cada real. No tuve que pensar en nada — desayuno listo, clases a las 9, tarde libre para practicar. El equipo de Indiana sabe exactamente lo que hace."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">L</div>
+          <div>
+            <div class="tcard-name">Laura P.</div>
+            <div class="tcard-origin">Buenos Aires, Argentina · Kite Retiro</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard fade">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"Vine por 3 días de prueba con el Intro y me quedé 7. Cumbuco no te suelta. El viento, la gente, la vibe del hostel — es difícil de explicar pero muy fácil de volver."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar">R</div>
+          <div>
+            <div class="tcard-name">Rafael S.</div>
+            <div class="tcard-origin">Bogotá, Colombia · Intro → Kite Week</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── EXPERIENCED KITERS ─────────────── -->
+<section class="exp-section">
+  <div class="container">
+    <div class="exp-inner">
+      <div class="fade">
+        <div class="section-label">¿Ya sabés kite?</div>
+        <h2 class="section-title">Pase de Temporada para kiters experimentados</h2>
+        <p class="section-body">
+          Si ya sabes navegar y venís con tu propio equipo, el Pase de Temporada es lo tuyo. Hospedaje + la mejor comunidad + asistencia diaria + comunidad. Sin clases, sin estructura rígida — solo viento.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="https://wa.me/5585992792065?text=Hola%2C%20ya%20soy%20kiter%20con%20equipo%20propio%20y%20me%20interesa%20el%20Pase%20de%20Temporada%20en%20Indiana." class="btn-primary" target="_blank" rel="noopener">Consultar el Pase</a>
+        </div>
+      </div>
+      <div class="exp-passes fade">
+        <div class="pass-card">
+          <div class="pass-type">Semanal</div>
+          <div class="pass-name">Compartida</div>
+          <div class="pass-price">R$1.100</div>
+          <div class="pass-dur">6 noches</div>
+        </div>
+        <div class="pass-card">
+          <div class="pass-type">Semanal</div>
+          <div class="pass-name">Privada</div>
+          <div class="pass-price">R$2.400</div>
+          <div class="pass-dur">6 noches</div>
+        </div>
+        <div class="pass-card">
+          <div class="pass-type">Semanal</div>
+          <div class="pass-name">Compartida</div>
+          <div class="pass-price">R$4.500</div>
+          <div class="pass-dur">6 noches</div>
+        </div>
+        <div class="pass-card">
+          <div class="pass-type">Semanal</div>
+          <div class="pass-name">Privada</div>
+          <div class="pass-price">R$9.800</div>
+          <div class="pass-dur">6 noches</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── FAQ ─────────────── -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-sidebar fade">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-body" style="margin-top: 1rem;">
+          ¿No encontrás lo que buscás? El equipo de Indiana responde en minutos por WhatsApp.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="https://wa.me/5585992792065?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20kite%20trips." class="btn-primary" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="faq-list fade">
+        <div class="faq-item open">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Necesito experiencia previa para el Kite Week?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">No. El Kite Week está diseñado para comenzar desde cero. Con 10 horas de clases en Cumbuco — uno de los mejores spots del mundo para aprender — la mayoría de los alumnos ya logra volar de forma independiente al final de la semana. Si ya tenés experiencia, el pack sirve para escalar el nivel.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Cuándo es la mejor época para venir?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">La temporada alta es agosto a noviembre — viento fuerte, constante y laminar, ideal para aprender rápido. La temporada media (junio–julio y diciembre) también tiene muy buen viento y precios más convenientes. Incluso en baja temporada (enero–mayo), Cumbuco tiene más de 300 días de viento al año.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Qué pasa si el viento falla algún día?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">En Cumbuco el viento falla muy raramente — es uno de los spots más confiables del planeta. Si algún día no hay condiciones, las horas de clase se reorganizan durante la semana con el instructor, sin costo adicional. El paquete siempre incluye las horas completas.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Incluye vuelos o traslados?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Los paquetes no incluyen vuelos. El aeropuerto más cercano es Fortaleza (FOR) — desde ahí, Cumbuco queda a 40 minutos en Uber o taxi. El equipo de Indiana puede orientarte con el traslado al momento de reservar.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Se puede ir en pareja o en grupo?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">Sí. Si viajás de a dos, la habitación privada se comparte y el precio por persona baja considerablemente. Para grupos de 3 o más, armamos propuesta a medida — escribinos y lo coordinamos sin problema.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            ¿Cómo se reserva y cuándo hay que pagar?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">La reserva se coordina directamente por WhatsApp con el equipo. Se pide un anticipo para confirmar la fecha. Consultanos las condiciones de cancelación al momento de reservar — siempre buscamos una solución si los planes cambian.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── FINAL CTA ─────────────── -->
+<section class="cta-section">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-label">¿Listo?</div>
+    <h2 class="section-title fade">Tu próximo viaje de kite<br>empieza con un mensaje.</h2>
+    <div class="cta-urgency">🔥 Temporada alta: julio-diciembre. Plazas limitadas.</div>
+    <p class="section-body fade">El equipo de Indiana responde en minutos. Consultá disponibilidad, elegí el paquete que mejor te queda y cerrá tu fecha.</p>
+    <br>
+    <a href="https://wa.me/5585992792065?text=Hola%2C%20me%20interesa%20hacer%20un%20kite%20trip%20en%20Indiana%20Kite%20House.%20¿Qué%20paquetes%20tienen%20disponibles?" class="btn-wa" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Reservar por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ─────────────── FOOTER ─────────────── -->
+<footer>
+  <p>Indiana Kite House — Cumbuco, Caucaia, Ceará, Brasil.</p>
+  <p>
+    <a href="https://wa.me/5585992792065" target="_blank" rel="noopener">WhatsApp</a>
+    &nbsp;·&nbsp;
+    <!-- REPLACE: actualizar handle de Instagram -->
+    Instagram: <a href="https://www.instagram.com/indiana_kiteschoolcumbuco/" target="_blank" rel="noopener">@indiana_kiteschoolcumbuco</a>
+  </p>
+</footer>
+
+<!-- ─────────────── FLOAT WA ─────────────── -->
+<a href="https://wa.me/5585992792065?text=Hola%2C%20me%20interesa%20un%20kite%20trip%20en%20Indiana." class="float-wa" target="_blank" rel="noopener" aria-label="Reservar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll fade-in
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+</script>
+
+</body>
+</html>

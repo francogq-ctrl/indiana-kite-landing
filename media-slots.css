@@ -1,0 +1,16 @@
+/* Indiana landing — rutas de media por slot (ver assets/MEDIA-SLOTS.md) */
+
+:root {
+  --slot-02: url('assets/02.jpeg'); /* Hero poster + fallback */
+  --slot-03: url('assets/03.jpg'); /* Por qué Indiana */
+  --slot-04: url('assets/04.jpg'); /* Paquete Intro Kite */
+  --slot-05: url('assets/05.jpg'); /* Paquete Kite Week */
+  --slot-06: url('assets/06.jpg'); /* Paquete Kite Retiro */
+  --slot-07: url('assets/07.jpg'); /* Galería · 1 */
+  --slot-08: url('assets/08.jpg'); /* Galería · 2 */
+  --slot-09: url('assets/09.jpg'); /* Galería · 3 */
+  --slot-10: url('assets/10.jpg'); /* Galería · 4 wide */
+  --slot-11: url('assets/11.jpg'); /* Galería · 5 */
+  --slot-12: url('assets/12.jpg'); /* Galería · 6 */
+  --slot-13: url('assets/13.jpg'); /* Galería · 7 */
+}

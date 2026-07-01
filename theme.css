@@ -1,0 +1,66 @@
+/* Indiana Kite — Pop Coral (production theme) */
+
+:root,
+[data-theme="pop-coral"] {
+  --terra: #FF6B6B;
+  --coral: #FFD166;
+  --sand: #FFF8E7;
+  --palm: #06D6A0;
+  --warm-white: #FFFBF5;
+  --text: #1A1A2E;
+  --text-light: #5C5C7A;
+  --border: #FFE0E0;
+
+  --serif: 'Bricolage Grotesque', sans-serif;
+  --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --display: 'Bricolage Grotesque', sans-serif;
+
+  --nav-bg: rgba(255, 251, 245, 0.92);
+  --nav-border: rgba(255, 107, 107, 0.12);
+  --nav-logo: var(--text);
+  --nav-logo-accent: #06D6A0;
+
+  --hero-bg: linear-gradient(135deg, #FFF8E7 0%, #FFE8EC 40%, #E0FFF5 100%);
+  --hero-overlay: linear-gradient(to bottom, transparent 0%, rgba(255, 251, 245, 0.15) 100%);
+  --hero-text: var(--text);
+  --hero-text-muted: var(--text-light);
+  --hero-badge-bg: rgba(255, 107, 107, 0.15);
+  --hero-badge-border: rgba(255, 107, 107, 0.4);
+  --hero-badge-text: #FF6B6B;
+  --hero-stat-bg: rgba(255, 255, 255, 0.75);
+  --hero-stat-border: rgba(255, 107, 107, 0.2);
+  --hero-stat-text: var(--text);
+  --hero-stat-muted: var(--text-light);
+  --hero-scroll: var(--text-light);
+  --btn-secondary-color: var(--text);
+  --btn-secondary-border: rgba(26, 26, 46, 0.25);
+
+  --trust-bg: #FFF0F0;
+  --trust-text: var(--text);
+  --trust-sub: var(--text-light);
+  --trust-icon-bg: rgba(255, 107, 107, 0.15);
+
+  --surface-alt: #F0FFFA;
+  --surface-alt-label: #FF6B6B;
+  --surface-alt-title: var(--text);
+  --surface-alt-body: var(--text-light);
+
+  --pass-bg: rgba(255, 255, 255, 0.65);
+  --pass-border: var(--border);
+  --pass-name: var(--text);
+  --pass-dur: var(--text-light);
+
+  --why-caption-bg: rgba(255, 255, 255, 0.92);
+  --why-caption-strong: var(--terra);
+  --why-caption-sub: var(--text-light);
+
+  --g-label-bg: rgba(255, 255, 255, 0.88);
+  --g-label-text: var(--text);
+
+  --footer-bg: var(--sand);
+  --footer-text: var(--text-light);
+  --footer-link: #FF6B6B;
+
+  --ticker-text: rgba(255, 251, 245, 0.95);
+  --cta-glow: rgba(255, 209, 102, 0.35);
+}
